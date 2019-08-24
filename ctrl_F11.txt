@@ -1,0 +1,20 @@
+INFO : org.springframework.beans.factory.xml.XmlBeanDefinitionReader - Loading XML bean definitions from class path resource [applicationCTX.xml]
+INFO : org.springframework.context.support.GenericXmlApplicationContext - Refreshing org.springframework.context.support.GenericXmlApplicationContext@694f9431: startup date [Sat Aug 24 22:19:41 BST 2019]; root of context hierarchy
+INFO : org.springframework.beans.factory.support.DefaultListableBeanFactory - Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4678c730: defining beans [logAop,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.aop.aspectj.AspectJPointcutAdvisor#0,publicM,xmlStudent,xmlWorker]; root of factory hierarchy
+
+Student.getStudentInfo() is started
+name: Kyu
+age: 12
+grade: 2
+class: 1
+Student.getStudentInfo() is finished
+Student.getStudentInfo() elapsed time: 26
+
+Worker.getWorkerInfo() is started
+name: Rey
+age: 11
+job: sleeper
+Worker.getWorkerInfo() is finished
+Worker.getWorkerInfo() elapsed time: 21
+INFO : org.springframework.context.support.GenericXmlApplicationContext - Closing org.springframework.context.support.GenericXmlApplicationContext@694f9431: startup date [Sat Aug 24 22:19:41 BST 2019]; root of context hierarchy
+INFO : org.springframework.beans.factory.support.DefaultListableBeanFactory - Destroying singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@4678c730: defining beans [logAop,org.springframework.aop.config.internalAutoProxyCreator,org.springframework.aop.aspectj.AspectJPointcutAdvisor#0,publicM,xmlStudent,xmlWorker]; root of factory hierarchy

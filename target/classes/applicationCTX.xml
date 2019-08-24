@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+
+	<bean id="logAop" class="com.javalec.aop_xml.LogAop"/>
+	
+	
+	<!-- aop configuration: we configure a proxy (LogAop.java) setting a range of an aspect  -->
+	<aop:config>
+		<aop:aspect id="logger" ref="logAop">
+		
+			<!-- Pointcut is a predicate or expression that matches join points -->
+			<!-- within() == a range --> 
+			<aop:pointcut id="publicM" expression="within(com.javalec.aop_xml.*)"/>
+			
+			<!-- around advice -->
+			<!-- Advice is an action taken by an aspect at a particular join point. Different types of advice include “around,” “before” and “after” advice -->
+			<!-- Around is an advice type, which ensures that an advice can run before and after the method execution -->
+			<!-- Around advice: Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception. -->	
+			<aop:around pointcut-ref="publicM" method="loggerAop"/>
+		</aop:aspect>
+	</aop:config>
+	
+	<bean id="xmlStudent" class="com.javalec.aop_xml.Student">
+		<property name="name" value="Kyu"/>
+		<property name="age" value="12"/>
+		<property name="grade" value="2"/>
+		<property name="classNum" value="1"/>
+	</bean>
+		
+	<bean id="xmlWorker" class="com.javalec.aop_xml.Worker">
+		<property name="name" value="Rey"/>
+		<property name="age" value="11"/>
+		<property name="job" value="sleeper"/>
+	</bean>
+
+</beans>
